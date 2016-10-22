@@ -1,0 +1,9 @@
+﻿Billing System
+[In IIT, each year need to make many bills. These bills encompases with BSSE, MSSE, PGDIT, Short Course program. Many events, exam, equipment buying also included. Currently all these program’s bills are created manually. This system is tough to maintain, collaborate with budget, and enough lengthy process. So an automated billing system is necessary to efficiently handle billing process.]
+
+
+[Stakeholders: 
+Faculties: Dr. Kazi Muheymin-Us Sakib, Dr. Md. Mahbubul Alam Joarder, Amit Seal Ami
+Office members: Sompa Rani Kar, Narayan Kunda]
+User Scenario
+To manipulate a bill user’s of this system must need to login in the system through a login process. Before that they need to register in the system. To create a bill user first enter the name of bill and select some billing criteria. In case of new billing criteria user can add a new entry which will be verified by admin as a criteria. Based on those criteria, user input some amount of money. After that user create a billing document with some of approval section. In approval section there are director’s signature, accountant signature and user signature. To approve this bill user send billing document to admin. Admin can see all the billing list pending for approval. Admin approve these bill after checking budget for the bill, event occurrence, appropriate validity. After approval by admin the bill is sent to director for final approval. If a bill is sent to director a notification is also sent to the corresponding user notifying the bill is in final approval. Similarly, if bill did not approve by admin a notification is sent to user with identifying the reason to decline the bill. User need to make new bill with proper correction. On the other hand, accepted bills are approved by director and send to corresponding user for generate a pdf with the bill.
