@@ -1,0 +1,34 @@
+Billing System
+User Scenario
+The billing system has four kinds of users: an admin, a director, coordinators and normal users. 
+The admin has the supreme authority over the whole system. He can promote any user to a coordinator.
+Also anytime he can demote a coordinator to a normal user.
+Every user needs to be authenticated to enter into the system. There are some categories on which 
+bills are made. If a user wants to make a bill, he enters the name of the bill. Then he selects the
+category/categories of the corresponding bill and enters the amount for each category. If the category
+is not listed, the user can request for adding new category. The admin adds new categories based 
+on requests from the users.
+Then the user creates a document of the bill and sends this document to the corresponding coordinator
+of the bill. The coordinator makes a validation check on the bill and then approves or rejects the 
+bill. If the bill is approved or rejected, the user is notified about it. If a bill is rejected, 
+the user can edit the billing document and send it back to the coordinator again for approval. If the 
+bill is approved, the coordinator sends it to the director for final approval. When a bill is sent 
+for final approval, the user is notified about it again. The director approves it and the system 
+notifies the user about the approval. After final approval, user can generate a pdf of the bill 
+and print it out.
+Billing fields:
+	1. Admission
+	2. Examination
+	3. Extra-curriculum activity
+		a. Games
+		b. Cultural programs
+		c. Picnic
+	4. Script Checking
+	5. Overtime
+	6. Food
+	7. Training Programs
+	8. Regular course
+	9. Short course
+	10. Maintenance
+		a. Buying new things
+		b. Repair
