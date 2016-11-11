@@ -2,4 +2,8 @@
 .gitignore
 .idea/
 /billing-system/billing-system.iml
-
+/billing-system/css/bootstrap/
+/billing-system/js/bootstrap/
+/billing-system/js/jquery/
+/billing-system/fonts/
+/billing-system/pom.xml
