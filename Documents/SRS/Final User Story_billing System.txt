@@ -1,12 +1,17 @@
 Billing System
 User Scenario
-The billing system has four kinds of users: an admin, a director, coordinators and normal users. 
+The billing system has four types of users: an admin, a director, coordinators and normal users. 
 The admin has the supreme authority over the whole system. He can promote any user to a coordinator.
 Also anytime he can demote a coordinator to a normal user.
-Every user needs to be authenticated to enter into the system. There are some categories on which 
-bills are made. If a user wants to make a bill, he enters the name of the bill. Then he selects the
-category/categories of the corresponding bill and enters the amount for each category. If the category
-is not listed, the user can request for adding new category. The admin adds new categories based 
+Every user needs to be authenticated to enter into the system.Each user must provide following information during 
+registration.
+	1. User's full Name
+	2. User's Email Address
+	3. User's designation
+	5. Password
+There are some categories on which  bills are made. If a user wants to make a bill, he enters the name of the 
+bill. Then he selects the category/categories of the corresponding bill and enters the amount for each category. 
+If the category is not listed, the user can request for adding new category. The admin adds new categories based 
 on requests from the users.
 Then the user creates a document of the bill and sends this document to the corresponding coordinator
 of the bill. The coordinator makes a validation check on the bill and then approves or rejects the 
