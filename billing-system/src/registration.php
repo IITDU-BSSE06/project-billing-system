@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Registration</title>
+  <title>Sign up</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -23,43 +23,26 @@
       return (false)
     }
     function validateForm() {
-      var x = document.forms["signUpForm"]["first_name"].value;
-      var status = document.getElementById('firstNameStatus');
+      var myForm = document.getElementById('form');
+      var x = document.forms["signUpForm"]["username"].value;
+      var status = document.getElementById('usernameStatus');
       if(x === "") {
         status.innerHTML = "This field cannot be empty";
+        myForm.action = "";
         return false;
       }
-      status.innerHTML = "";
-      x = document.forms["signUpForm"]["last_name"].value;
-      status = document.getElementById('lastNameStatus');
-      if(x === "") {
-        status.innerHTML = "This field cannot be empty";
-        return false;
-      }
-      status.innerHTML = "";
-      x = document.forms["signUpForm"]["username"].value;
-      status = document.getElementById('usernameStatus');
-      if(x === "" || x.length < 6) {
-        status.innerHTML = "Username must be at least 6 characters long";
-        return false;
-      }
-      status.innerHTML = "";
-      if(/^[a-zA-Z]+$/.test(x)) {}
-      else {
-        status.innerHTML="Username can contain only alphabets";
-        return false;
-      }
-
       status.innerHTML = "";
       var email = document.forms["signUpForm"]["email"].value;
       if(validateEmail(email)){}
       else {
+        myForm.action = "";
         return false;
       }
       var z = document.forms["signUpForm"]["pwd"].value;
       status = document.getElementById('passwordStatus');
       if(z === "" || z.length < 6) {
         status.innerHTML = "Password must be at least 6 characters long";
+        myForm.action = "";
         return false;
       }
 
@@ -69,114 +52,100 @@
       if(z === y) {}
       else {
         status.innerHTML = "Passwords do not match.";
+        myForm.action = "";
         return false;
       }
-
+      myForm.action = "verifyRegistration.php";
       return true;
     }
   </script>
+
 </head>
 
 
 <body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
+<div style="width: 1200px; margin: 0 auto;">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="registration.php">Billing System</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <button type="submit" class="btn btn-primary" id="sign_upTop">Sign up</button>
+          <button type="submit" class="btn btn-primary" id="sign_inTop">Sign in</button>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="row">
+    <div class="col-sm-7" style="background-image: url('back.jpg'); height: 700px;">
+      <h2>Billing System</h2>
+      <p style="font-size: 20px; color: #190033;">Billing System is a private web application for the users of Institute of Information Technology</p>
     </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+      <div>
+        <form id="form" name="signUpForm" action="verifyRegistration" onsubmit="return validateForm()" method="post">
+          <div>
+            <h2>Sign Up for Billing System</h2>
+            <p></br></p>
+            <div class="form-group">
+              <label for="first_name">Name:</label>
+              <input type="text" class="form-control" id="username" placeholder="Enter your name">
+              <span id="usernameStatus" class="text-danger"></span>
+            </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="someone@example.com">
+              <span id="emailStatus" class="text-danger"></span>
+            </div>
 
-<div class="container">
-  <form name="signUpForm" action="verifyRegistration.php" onsubmit="return validateForm()" method="post">
-    <div class="col-sm-5 col-sm-offset-5">
-      <h2>Sign Up for Billing System</h2>
-      <p></br></p>
-      <div class="form-group">
-        <label for="first_name">First Name:</label>
-        <input type="text" class="form-control" id="first_name" placeholder="Enter your first name">
-        <span id="firstNameStatus" class="text-danger"></span>
+            <div class="form-group">
+              <label for="designation">Designation:</label>
+              <select class="form-control" name="designation">
+                <option value="lecturer">Lecturer</option>
+                <option value="assistantProfessor">Assistant Professor</option>
+                <option value="associateProfessor">Associate Professor</option>
+                <option value="professor">Professor</option>
+                <option value="director">Director</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="pwd" placeholder="Enter your password">
+              <span id="passwordStatus" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="confirm_pwd">Confirm password:</label>
+              <input type="password" class="form-control" id="confirm_pwd" placeholder="Retype your password">
+              <span id="confirmPasswordStatus" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="sign_up">Sign up for Billing System</button>
+          </div>
+        </form>
       </div>
-
-      <div class="form-group">
-        <label for="last_name">Last Name:</label>
-        <input type="text" class="form-control" id="last_name" placeholder="Enter your last name">
-        <span id="lastNameStatus" class="text-danger"></span>
-      </div>
-
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" class="form-control" id="username" placeholder="Username">
-        <span id="usernameStatus" class="text-danger"></span>
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" class="form-control" id="email" placeholder="someone@example.com">
-        <span id="emailStatus" class="text-danger"></span>
-      </div>
-
-      <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="pwd" placeholder="Enter your password">
-        <span id="passwordStatus" class="text-danger"></span>
-      </div>
-
-      <div class="form-group">
-        <label for="confirm_pwd">Confirm password:</label>
-        <input type="password" class="form-control" id="confirm_pwd" placeholder="Retype your password">
-        <span id="confirmPasswordStatus" class="text-danger"></span>
-      </div>
-
-      <button type="submit" class="btn btn-default" id="sign_up">Sign Up</button>
     </div>
-  </form>
+  </div>
+</div>
 </div>
 </body>
 </html>
