@@ -15,12 +15,12 @@
 
     function validateEmail(email) {
       var status = document.getElementById('emailStatus');
-      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){ 
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
         status.innerHTML = "";
-        return (true)  
-      }  
+        return (true)
+      }
       status.innerHTML = "Invalid email address";
-      return (false) 
+      return (false)
     }
     function validateForm() {
       var x = document.forms["signUpForm"]["first_name"].value;
@@ -71,7 +71,7 @@
         status.innerHTML = "Passwords do not match.";
         return false;
       }
-      
+
       return true;
     }
   </script>
@@ -134,7 +134,7 @@
 </nav>
 
 <div class="container">
-  <form name="signUpForm" action="www.google.com" onsubmit="return validateForm()" method="post">
+  <form name="signUpForm" action="verifyRegistration.php" onsubmit="return validateForm()" method="post">
     <div class="col-sm-5 col-sm-offset-5">
       <h2>Sign Up for Billing System</h2>
       <p></br></p>
