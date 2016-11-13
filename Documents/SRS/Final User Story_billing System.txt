@@ -8,7 +8,7 @@ registration.
 	1. User's full Name
 	2. User's Email Address
 	3. User's designation
-	5. Password
+	4. Password
 There are some categories on which  bills are made. If a user wants to make a bill, he enters the name of the 
 bill. Then he selects the category/categories of the corresponding bill and enters the amount for each category. 
 If the category is not listed, the user can request for adding new category. The admin adds new categories based 
