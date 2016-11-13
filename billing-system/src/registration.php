@@ -107,13 +107,13 @@
             <p></br></p>
             <div class="form-group">
               <label for="first_name">Name:</label>
-              <input type="text" class="form-control" id="username" placeholder="Enter your name">
+              <input name="username" type="text" class="form-control" id="username" placeholder="Enter your name">
               <span id="usernameStatus" class="text-danger"></span>
             </div>
 
             <div class="form-group">
               <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email" placeholder="someone@example.com">
+              <input name="email" type="email" class="form-control" id="email" placeholder="someone@example.com">
               <span id="emailStatus" class="text-danger"></span>
             </div>
 
@@ -130,7 +130,7 @@
 
             <div class="form-group">
               <label for="pwd">Password:</label>
-              <input type="password" class="form-control" id="pwd" placeholder="Enter your password">
+              <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter your password">
               <span id="passwordStatus" class="text-danger"></span>
             </div>
 
