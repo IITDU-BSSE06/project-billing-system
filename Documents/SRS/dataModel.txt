@@ -1,0 +1,60 @@
+Identify Data Objects
+Nouns having attributes are selected as data object. Those who doesn’t have any attributes have covered under the data objects.
+Data Object: Admin
+Attributes:
+	•User Id
+	•Email
+	•Password
+	•User Name
+	•User Type
+
+Data Object: Director
+Attributes:
+	•User Id
+	•Email
+	•Password
+	•User Name
+	•User Type
+
+Data Object: Coordinator
+Attributes:
+	•User Id
+	•Email
+	•Password
+	•User Name
+	•User Type
+
+	
+Data Object: User
+Attributes:
+	•User Id
+	•Email
+	•Password
+	•User Name
+
+Data Object: Document of Bill (Bill)
+Attributes:
+	•Bill Id
+	•Bill Name
+	•Bill Amount
+	•Category Id
+	•User Id
+
+Data Object: Category
+Attributes:
+	•Bill Id
+	•Bill Name
+	•Category Id
+
+
+
+
+Here, we found that Director, Coordinator and Admin have same attributes. So we can consider a new data object named “Admin Panel” which will hold the attributes of these data objects.
+
+Data Object: Admin Panel
+Attributes:
+	•User Id
+	•Email
+	•Password
+	•User Name
+	•User Type
