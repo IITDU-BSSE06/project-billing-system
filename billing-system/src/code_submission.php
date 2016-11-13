@@ -80,7 +80,7 @@
                             $sql = "TRUNCATE TABLE verification";
                             $conn->query($sql);
                             echo '<script type="text/javascript"> hell(); </script>';
-                            echo "Your account has been created successfully. You can sign in now with your email and password";
+                            echo "Congratulations! Your account has been created successfully. You can sign in now with your email and password.";
                             break;
                         }
                     }
@@ -100,7 +100,7 @@
 </div>
 <div class="footer">
     <p style="text-align: center;">Copyright &copy;2016 by Institute of Information Technology</p>
-    <p>University of Dhaka</p>
+    <p style="text-align: center;">University of Dhaka</p>
 </div>
 </body>
 </html>
