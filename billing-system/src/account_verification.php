@@ -61,10 +61,30 @@
             "CC: boss@ylw.com";
 
         $send = mail($to,$subject,$txt,$headers);
+
+        $servername = "localhost";
+
+        $username = "ahqmrf";
+        $password = "T7eHwuQrzcD6CMUT";
+        $dbname = "test";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+        // Check connection
+        if (!$conn) {
+          die("Connection failed: " . mysqli_connect_error());
+        }
+        $emailID = $_POST["email"];
+        $sql = "INSERT INTO verification (email, code)
+    VALUES ('$emailID' , '$code')";
+        $conn->query($sql);
+        mysqli_close($conn);
         ?>
         <label for="first_name">Enter the verification code:</label>
-        <input type="text" class="form-control" id="code" placeholder="Code">
-        <button type="submit" class="btn btn-primary" id="submitVerification">Sign me in</button>
+        <form action="code_submission.php" method="post">
+          <input type="text" class="form-control" name="code" placeholder="Code">
+          <button type="submit" class="btn btn-primary" id="submitVerification" onclick="location.href = 'code_submission.php';">Sign me in</button>
+        </form>
       </div>
     </div>
   </div>
