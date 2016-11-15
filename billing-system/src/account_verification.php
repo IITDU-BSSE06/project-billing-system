@@ -97,13 +97,15 @@ if (isset($_SESSION['email'])) {
 				}
 				$username = $_POST["username"];
 				$email = $_POST["email"];
-				$designation = $_POST["designation"];
-				$password = $_POST["password"];
-				$_SESSION["reg_email"] = $email;
-				$sql = "INSERT INTO user (user_name, user_email, user_designation, user_password, user_verification, user_activation) 
-    VALUES ('$username' , '$email', '$designation', '$password', '$code', 0)";
-				$conn->query($sql);
-				mysqli_close($conn);
+				if($email != "") {
+					$designation = $_POST["designation"];
+					$password = $_POST["password"];
+					$_SESSION["reg_email"] = $email;
+					$sql = "INSERT INTO user (user_name, user_email, user_designation, user_password, user_verification, user_activation) 
+    						VALUES ('$username' , '$email', '$designation', '$password', '$code', 0)";
+					$conn->query($sql);
+					mysqli_close($conn);
+				}
 				?>
 				<label for="first_name">Enter the verification code:</label>
 				<form action="code_submission.php" method="post">

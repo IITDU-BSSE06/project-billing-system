@@ -5,6 +5,36 @@ if (isset($_SESSION['email'])) {
 } else {
 	echo '<script type="text/javascript">location.href = "access_denied.php";</script>';
 }
+
+
+$servername = "localhost";
+$username = "ahqmrf";
+$password = "T7eHwuQrzcD6CMUT";
+$dbname = "test";
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+	die("Connection failed: " . mysqli_connect_error());
+}
+if ($_POST['newProgram'] == "") {
+} else {
+	$prg = $_POST['newProgram'];
+	$_SESSION['newProgram'] = $prg;
+	$sql = "INSERT INTO program (name)
+    VALUES ('$prg')";
+	$conn->query($sql);
+}
+$sql = "SELECT name FROM program";
+$result = $conn->query($sql);
+$str = "";
+$ok = false;
+while ($row = $result->fetch_assoc()) {
+	if ($ok) {
+		$str = $str . ',';
+	}
+	$str = $str . $row['name'];
+	$ok = true;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,23 +95,46 @@ if (isset($_SESSION['email'])) {
 			<h2>Home Menu</h2>
 			<p></p>
 			<ul>
-				<li><a href="home.php" style="color: #8C6623;">Home</a></li>
-				<li><a href="create_bill.php" style="color: #8C6623;">Create a new bill</a></li>
+				<li><a href="home.php" style="color: #8C6623;">Create a new bill</a></li>
 				<li><a href="user_statistics.php" style="color: #8C6623;">My Statistics</a></li>
 				<li><a href="user_submissions.php" style="color: #8C6623;">My Submissions</a></li>
 				<li><a href="notifications.php" style="color: #8C6623;">Notifications</a></li>
-				<?php
-				if($_SESSION["admin"] == 1) {
-					echo "<li><a href=\"add_category.php\" style=\"color: #8C6623;\">Add Category</a></li>
-					<li><a href=\"promote_user.php\" style=\"color: #8C6623;\">Promote User</a></li>
-					<li><a href=\"demote_user.php\" style=\"color: #8C6623;\">Demote User</a></li>";
-				}
-				?>
 			</ul>
 		</div>
 		<div class="col-sm-7" style=" border-right: 1px solid #BBCDBC;">
-			<h2 style="color: #4D574E;">Home</h2>
-			<p>Coming soon!</p>
+			<h2 style="color: #4D574E;">Create a new bill</h2>
+			<form id="form" name="programName" action="input_bill.php" method="post"
+				  style="width: 500px; align-content: flex-end;">
+				<div>
+					<p></p>
+					<div class="form-group">
+						<label for="program">Select the program about the bill:</label>
+						<select class="form-control" name="program" id="op">
+							<script type="text/javascript">
+								var total = "<?php echo $str; ?>";
+								//alert(total);
+								var options = total.split(",");
+								var cur = document.getElementById('op');
+								for (i = 0, len = options.length; i < len; i++) {
+									var opt = document.createElement("OPTION");
+									opt.innerHTML = options[i];
+									cur.appendChild(opt);
+								}
+							</script>
+						</select>
+					</div>
+
+					<button type="submit" class="btn btn-primary" id="next">Next step</button>
+				</div>
+			</form>
+			<form id="form" name="newProgramName" action="new_program.php" method="post"
+				  style="width: 500px; align-content: flex-end;">
+				<p></br></br></p>
+				<p>New program added.</p>
+				<label for="newProgram">Add a new program:</label>
+				<input name="newProgram" type="text" class="form-control" id="newProgram" placeholder="Program name">
+				<button type="submit" class="btn btn-primary" id="next">Add program</button>
+			</form>
 		</div>
 		<div class="col-sm-3">
 			<p>Ticker</p>
