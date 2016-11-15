@@ -1,9 +1,5 @@
 <?php
   session_start();
-  if($_POST['email'] == "") {
-    echo '<script type="text/javascript">location.href = "registration.php";</script>';
-  }
-  
   if(isset($_SESSION['email'])) {
     echo '<script type="text/javascript">location.href = "home.php";</script>';
   }
@@ -14,7 +10,7 @@
   <link rel="icon" 
       type="image/jpg" 
       href="icon.jpg">
-  <title>Verify Account</title>
+  <title>Billing System</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -57,53 +53,35 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="row">
-  <div class="col-sm-7" style="background-image: url('back.jpg'); height: 550px;">
-    <h2>Billing System</h2>
-    <p style="font-size: 20px; color: #190033;">Billing System is a private web application for the users of Institute of Information Technology</p>
-  </div>
-  <div class="col-sm-1"></div>
-  <div class="col-sm-4" >
-  <div>
-    <p id="msg">A verification code has been sent to <?php echo $_POST["email"]; ?></p>
-    <?php
-    $to = $_POST["email"];
-    $subject = "Verify Account";
-    $code = md5(uniqid(rand(), true));
-    $txt = "Thank you for signing up in Billing System. Your account verification code is " . $code;
-    $headers = "From: billingsystem@iitdu.com";
+<div class="col-sm-7" style="background-image: url('back.jpg'); height: 550px;">
+  <h2>Billing System</h2>
+  <p style="font-size: 20px; color: #190033;">Billing System is a private web application for the users of Institute of Information Technology</p>
+</div>
+<div class="col-sm-1"></div>
+<div class="col-sm-4">
+<div>
+  <form id="form" name="signInForm" action="check_authentication.php" method="post">
+    <div>
+      <p></br></p>
 
-    $send = mail($to,$subject,$txt,$headers);
+      <div class="form-group">
+        <span id="confirmPasswordStatus" class="text-danger">You must sign in first.</br></span>
+        <label for="email">Email:</label>
+        <input name="email" type="email" class="form-control" id="email" placeholder="someone@example.com">
+      </div>
 
-    $servername = "localhost";
-    $username = "ahqmrf";
-    $password = "T7eHwuQrzcD6CMUT";
-    $dbname = "billing_system";
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter your password">
+      </div>
 
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-    $username = $_POST["username"];
-    $email = $_POST["email"];
-    $designation = $_POST["designation"];
-    $password = $_POST["password"];
-    $_SESSION["reg_email"] = $email;
-    $sql = "INSERT INTO user (user_name, user_email, user_designation, user_password, user_verification, user_activation) 
-    VALUES ('$username' , '$email', '$designation', '$password', '$code', 0)";
-    $conn->query($sql);
-    mysqli_close($conn);
-    ?>
-    <label for="first_name">Enter the verification code:</label>
-    <form action="code_submission.php" method="post">
-    <input type="text" class="form-control" name="code" placeholder="Code">
-    <button type="submit" class="btn btn-primary" id="submitVerification" onclick="location.href = 'code_submission.php';">Sign me in</button>
-    </form>
-  </div>
-  </div>
-  </div>
-  </div>
+      <button type="submit" class="btn btn-primary" id="sign_up">Sign in</button>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="footer">
   <p style="text-align: center;">Copyright &copy;2016 by Institute of Information Technology</br>
