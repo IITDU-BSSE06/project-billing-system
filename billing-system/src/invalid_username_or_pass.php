@@ -3,12 +3,6 @@ session_start();
 if (isset($_SESSION['email'])) {
 	echo '<script type="text/javascript">location.href = "home.php";</script>';
 }
-if ($_SESSION["reg_email"]) {
-} else {
-	if ($_POST['code'] == "") {
-		echo '<script type="text/javascript">location.href = "registration.php";</script>';
-	}
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +10,7 @@ if ($_SESSION["reg_email"]) {
 	<link rel="icon"
 		  type="image/jpg"
 		  href="icon.jpg">
-	<title>Verify Account</title>
+	<title>Billing System</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 		  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -29,11 +23,6 @@ if ($_SESSION["reg_email"]) {
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 			crossorigin="anonymous"></script>
-	<script type="text/javascript">
-		function hell() {
-			document.getElementById('msg').style.color = "#22C145";
-		}
-	</script>
 
 </head>
 
@@ -80,60 +69,35 @@ if ($_SESSION["reg_email"]) {
 		</div>
 		<div class="col-sm-1"></div>
 		<div class="col-sm-4">
-			<div style="vertical-align: middle;">
-				<p></p>
-				<p></p>
-				<p id="msg" style="font-size: 30px; color: #FF335E; ">
-					<?php
-					$servername = "localhost";
-					$username = "ahqmrf";
-					$password = "T7eHwuQrzcD6CMUT";
-					$dbname = "billing_system";
+			<div>
+				<form id="form" name="signInForm" action="check_authentication.php" method="post">
+					<div>
+						<p></br></p>
 
-					// Create connection
-					$conn = mysqli_connect($servername, $username, $password, $dbname);
-					// Check connection
-					if (!$conn) {
-						die("Connection failed: " . mysqli_connect_error());
-					}
-					$email = $_SESSION['reg_email'];
+						<div class="form-group">
+							<label for="email">Email:</label>
+							<input name="email" type="email" class="form-control" id="email"
+								   placeholder="someone@example.com">
+						</div>
 
-					$sql = "SELECT user_email, user_verification FROM user";
-					$result = $conn->query($sql);
-					$ok = true;
-					while ($row = $result->fetch_assoc()) {
-						if ($row["user_email"] == $email && $row["user_verification"] == $_POST["code"]) {
-							$ok = false;
-							echo '<script type="text/javascript"> hell(); </script>';
-							echo "Congratulations! Your account has been created successfully. You can sign in now with your email and password.";
+						<div class="form-group">
+							<label for="pwd">Password:</label>
+							<input name="password" type="password" class="form-control" id="pwd"
+								   placeholder="Enter your password">
+							<span id="confirmPasswordStatus" class="text-danger">Invalid email or password.</span>
+						</div>
 
-							$sql = "UPDATE user SET user_activation=1 WHERE user_email = '$email'";
-							$conn->query($sql);
-							session_destroy();
-							break;
-						}
-					}
-					if ($ok) {
-						echo "The verification code you entered was wrong.";
-					}
-					mysqli_close($conn);
-					?>
-				</p>
-				<h2 id="header">Why a verification code is needed?</h2>
-				<p id="description">Because this verification code confirms that the user is a human, not a bot. Bot is
-					a software that signs up an online account, and some people misuse it to produce a massive amount of
-					acounts in a very short time. So basicaly the verification code is all about confirmation that you
-					are a human</p>
-				<p>We strongly recommend you to enter the verification code going to the previous page again if you did
-					not enter the code correctly.</p>
+						<button type="submit" class="btn btn-primary" id="sign_in">Sign in</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
 </div>
 </div>
 <div class="footer">
-	<p style="text-align: center;">Copyright &copy;2016 by Institute of Information Technology</p>
-	<p style="text-align: center;">University of Dhaka</p>
+	<p style="text-align: center;">Copyright &copy;2016 by Institute of Information Technology</br>
+		University of Dhaka</p>
 </div>
 </body>
 </html>
