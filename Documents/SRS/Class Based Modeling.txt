@@ -1,0 +1,234 @@
+Identifying Analysis Class
+To identify our analysis class, we firstly grammatically parsed all the nouns and then categorized them according to general classification and selection criteria.
+Following are the steps we used to analysis the classes for our system.
+
+External Entities: User
+Things: Password, User Name, Email, Bill Name, Category, Bill Amount, User Type, Bill 
+Occurrence or events: ---	
+Roles: Admin, Director, Coordinator
+Organizational units: ---
+Places: ---
+Structure: ---
+
+Step-1: Grammatical parsing (noun identifying) and categorizing using general classification:
+After categorizing noun using general classification, we follow the next step to identify preliminary classes. In this step, we find the noun which 
+fulfill at least three selection criteria or is an essential requirement.
+
+Step-2:  Selection Criteria:
+1. Retained information
+2. Needed services
+3. Multiple attributes
+4. Common attributes
+5. Common operations
+6. Essential requirements
+
+
+Potential Class	Characteristic Number That Applies	Remarks
+User		2,3,6				Accepted
+Admin		2,3,6				Accepted
+Director		2,3,6				Accepted
+Coordinator	2,3,6				Accepted
+Category		1,3				Accepted
+Password		1				Rejected
+User Name	1				Rejected
+Bill Name		1				Rejected
+Bill Amount	1				Rejected
+Email		1,2				Rejected
+User Type		1				Rejected
+Bill		1,3,6				Accepted
+
+Nouns that hold essential requirement we took them essential for our system and include them in our analysis classes.
+Preliminary Classes: 
+1.	User
+2.	Director
+3.	Coordinator
+4.	Admin
+5.	Bill
+
+Attributes Selection:
+So, the retrieved attributes are listed below with the preliminary classes.
+ 
+Class Name	Attributes
+
+User		User Name
+		User Id
+		Password
+		Email
+
+Director		User Name
+		Password
+		User Id
+		User Type
+
+Admin		User Name
+		Password
+		User Id
+		User Type
+
+Coordinator	User Name
+		Password
+		User Id
+		User Type
+
+Bill		Bill Name
+		Bill Id
+		Bill Amount
+
+
+Step-3: Method Identification:
+
+To identify methods, we will find out the verbs of the user story and will identify which one is in scope of the problem and which one is out of scope.
+
+Verb Detection:
+No	Verb		Remark
+1.	Promote		Yes
+2.	Demote		Yes
+3.	Sign Up		Yes
+4.	Sign In		Yes
+5.	Sign Out		Yes
+6.	Provide		Out of Scope
+7.	Select		Out of Scope
+8.	Approve		Yes
+9.	Enter		Out of Scope
+10.	 Pdf Generate	Yes
+11.	Notify		Yes
+12.	Bill Create		Yes
+13.	Reject		Yes
+14.	Add 		Yes
+15.	Reject		Yes
+16.	Send		Out of Scope
+17.	Check		Out of Scope
+18.	Edit		Yes
+
+
+So, the methods of the classes are listed below.
+
+Class Name	Methods
+
+User		Sign Out ()
+		Sign In ()
+ 		Sign Up ()
+		Pdf Generate ()
+		Edit ()
+
+Admin		Sign Out ()
+		Sign In ()
+		 Sign Up ()
+		Promote ()
+		Demote ()
+		Approve ()
+		Reject ()
+
+Director		Sign Out ()
+		Sign In ()
+ 		Sign Up ()
+		Approve ()
+		Reject ()
+
+Coordinator	Sign Out ()
+		Sign In ()
+ 		Sign Up ()
+		Approve ()
+		Reject ()
+
+Bill		Edit Bill ()
+		Delete Bill ()
+		Generate Bill ()
+
+Class Card:
+
+User	
+	Attributes	
+		User ID
+		User Name
+		Password
+		Email	
+	Methods	
+		Sign Out ()
+		Sign In ()
+		Sign Up ()
+		Pdf Generate ()
+		Edit ()
+Responsibilities	Collaborative Class
+Creates bill	Bill
+Generates pdf	Admin, Director, Coordinator
+
+
+Admin
+	Attributes	
+		User ID
+		User Name
+		Password
+		Email
+		User Type	
+	Methods
+		Sign Out ()
+		Sign In ()
+		Sign Up ()
+		Promote ()
+		Demote ()
+		Approve ()
+Responsibilities		Collaborative Class
+Promotes coordinator	Coordinator
+Demotes coordinator	Coordinator
+Approves bill		Bill
+Rejects bill		Bill
+
+
+
+Director
+	Attributes
+		User ID
+		User Name
+		Password
+		Email
+		User Type
+	Methods
+		Sign Out ()
+		Sign In ()
+		Sign Up ()
+		Approve ()
+		Reject ()
+
+Responsibilities	Collaborative Class
+Approves bill	Bill
+Rejects bill	Bill
+	
+
+Coordinator
+	Attributes
+		User ID
+		User Name
+		Password
+		Email
+		User Type		
+	Methods
+		Sign Out ()
+		Sign In ()
+ 		Sign Up ()
+		Approve ()
+		Reject ()
+Responsibilities	Collaborative Class
+Approves bill	Bill
+Rejects bill	Bill
+
+
+Bill
+	Attributes	
+		Bill Id
+		Bill Name
+		Category	
+	Methods
+		Edit Bill ()
+		Delete Bill ()
+		Generate Bill ()
+Responsibilities	Collaborative Class
+Generates bill	User
+Deletes bill	User
+Edit bill		User
+
+
+After analyzing each classes we found that Admin, Coordinator, Director have similar attributes and methods. So we can consider a super class named “Admin Panel” of them which will hold common attributes and common methods. Other classes will be sub class of this super class.
+
+Common Attributes: User ID, User Name, Password, Email, User Type 
+Common Methods: SignOut(), SignIn(), SignUp(), Approve(), Reject()
