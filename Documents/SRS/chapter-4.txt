@@ -1,0 +1,78 @@
+Chapter 4: Elicitation
+After discussing on inception part, we need to keep focus on the elicitation part. So this chapter specifies the elicitation part.
+
+4.1 Introduction
+Requirements elicitation is a part of requirement engineering that is the
+practice of gathering requirements from the users, customers, and other
+stakeholders. We have faced many problems like understanding the
+problems, problems of making questions for the stakeholders, problems of
+less communication with the stakeholders for time limitation, problems of
+volatility. Though it is not too easy to gather requirements within a very short
+time, we have surpassed these problems in an organized and systematic
+manner.
+
+4.2 Eliciting Requirements
+We have seen Question and Answer (Q&A) approach in the previous chapter, where the inception phase of requirement engineering has been described. The main task of this phase is to combine the elements of problem solving, elaboration, negotiation and specification. The collaborative working approach of the stakeholders is required to elicit the requirements. We have finished the following tasks for eliciting requirements-
+ 	Collaborative Requirements Gathering
+ 	Quality Function Deployment
+ 	Usage Scenarios
+ 	Elicitation work products
+
+4.2.1 Collaborative Requirements Gathering
+Actually, we met with many stakeholders in the inception phase such as cyclists, runners, our classmates and teacher as the common people and also the developers. These meetings created an indecisive state for us to elicit the requirements. To solve this problem we have met with the stakeholders (who are acting a vital rule in the whole process) again to elicit the requirements. A slightly different scenario from these approaches has been found. 
+Following activities have been completed to accomplish this task.
+ 	The meetings were conducted with the cyclists, runner and common people; they were questioned about their requirements and expectations from the web application we are developing.
+ 	They were asked about the problems they are facing without using any relevant application regarding sports activity.
+ 	At last we selected our final requirement list from the meetings.
+
+4.2.2 Quality Function Deployment
+Quality Function Deployment (QFD) is a technique that translates the needs of the customer into technical requirements for software. Ultimately the goal of QFD is to translate subjective quality criteria into objective ones that can be quantified and measured and which can then be used to design and manufacture the product. It is a methodology that concentrates on maximizing customer satisfaction from the software engineering process. So we have followed this methodology to identify the requirements for the project. The requirements, which are given below, are identified successfully by the QFD.
+
+
+4.2.2.1 Normal Requirements
+Normal requirements are generally the objectives and goals that are stated for a product or system during meetings with the customer. The presence of
+these requirements fulfills customers' satisfaction. These are the normal
+requirements for our project.
+ 	Allow user to do registration
+ 	Allow valid user to sign in and sign up
+ 	Check user validity
+ 	Features to have an idea about the user’s activity
+ 	Feature that will allow user role
+ 	Feature that will allow dynamic billing process
+ 	Allow users to generate pdf of the bill
+ 	Efficient and user friendly
+ 	The user interface of the system would be easy
+ 	Allow user to view approval of the admin panel
+ 	Allow user to give approval/rejection of a bill
+ 	Allow user to search other using their user name
+ 	Security issue
+ 	Error free activity
+ 4.2.2.2 Expected Requirements
+These requirements are intrinsic to the product or system and may be so elementary that the customer does not explicitly state them. Their absence will be a cause for significant dissatisfaction. Below the expected requirements for our project are briefly described.
+ 	The application shall be easily maintainable.
+ 	The application will be stable.
+ 	The application will be open for future extension and modification.
+ 	All the records and bills will be saved to database for future references
+ 	The application shall be user friendly for all type of users.
+ 	The user interface shall make use of input such as drop downs,
+check boxes and radio buttons as much as possible to avoid invalid and
+incorrect input.
+4.2.2.3 Exciting Requirements
+These requirements are for features that go beyond the customer's expectations and prove to be very satisfying when present. Following are some exciting requirements of out project.
+ 	Users can save graphs as images.
+ 	Different session will be provided for different users.
+ 	Connect user account with Facebook or other social media
+
+4.2.3 Usage Scenario
+4.2.4 Elicitation Work Product
+At first we have to know that the output of the Elicitation task may vary because of the dependency on size of the system or product to be built. Here, the elicitation work product includes:
+
+ 	Making a statement of our requirements for the project
+ 	Making a bounded statement of scope for our system.
+ 	Making a list of customers, users, and other stakeholders who participated in the requirements elicitation.
+ 	Making a list of requirements that are organized by function and domain constraints that apply to each.
+ 	A set of usage scenarios that provide insight into the use of the system.
+ 	Description of the system’s technical environment.
+
+4.3 Conclusion
+Elicitation process gives us a clear view of the requirements of the stakeholders and develops our understanding of the whole project. It also enables us to deliver a product that will satisfy all the stakeholders. This phase also helps us to identify the requirements, negotiate different approaches and specify a preliminary set of solution requirements in an atmosphere that is conducive to the accomplishment of the goal.
