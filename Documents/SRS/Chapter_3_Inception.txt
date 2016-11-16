@@ -1,0 +1,100 @@
+Chapter 3: Inception
+
+In this chapter, the Inception part of the software requirement analysis of our project will be discussed briefly.
+
+3.1 Introduction
+Inception is the beginning phase of requirements engineering. It defines how does a software project get started and what is the scope and nature of the problem to be solved. The goal of the inception phase is to identify concurrence needs and conflict requirements among the stakeholders of a software project. At project inception, we establish a basic understanding of the problem, the people who want a solution, the nature of the solution that is desired, and the effectiveness of preliminary communication and collaborations between the other stakeholders and the software team. 
+
+3.2 Establishing the ground work
+To establish the groundwork we have worked with the following factors related to the inception phases:
+ 	List of stakeholders
+ 	Recognizing multiple viewpoints
+ 	Working towards collaboration
+ 	Requirements questionnaire
+
+
+3.2.1 List of stakeholders
+Stakeholder refers to any person or group who will be affected by the system directly or indirectly. Stakeholders include end-users who interact with the system and everyone else in an organization that may be affected by its installation. At inception, a list of people who will contribute input as requirements are elicited (Chapter 3) is created. The initial list will grow as stakeholders are contacted because every stakeholder will be asked: “Whom else do you think I should talk to?”
+To identify the stakeholders we consulted with the teachers and student who are cyclists or runner asked those following questions:
+ 	What will be the main purpose of using the web application?
+ 	Who will be using the project outcomes?
+ 	Where we will find the resources we need to get the project done?
+ 	Whose work will my project affect? (During the project and also once the project is completed).
+Concluding thoughts on Stakeholders thoughts we identified that the common stakeholders of this system are all the faculties and the worker related to the existing manual billing system.
+Faculties of IIT: All the faculties will use the system as their part of billing procedure.
+Director of IIT: Director will use the system to approve bill and he/she will also be able to make his own bill.
+Coordinator of IIT: Coordinator will use the bill use the system for approving other’s bill as well as his/her own bill.
+Other people working in billing process in IIT: Other accountants of IIT will use the system as a part of billing procedure.
+Developers: Developers will build the system and work on further development of the project. They will be responsible for any type of interruption and they will solve it.
+3.2.2 Recognizing multiple viewpoints
+Though all types of stakeholders we identified will use the application on same purposes, each of them has slightly different view of the system. So we have to identify the multiple views of requirements. Assumptions are given below:
+Viewpoint of Faculties:
+ 	User friendly efficient system
+ 	System must generate the bill in pdf format
+ 	The generated value from the system should be error free
+ 	System must show the approval of the bill
+ 	Strongly authenticated system
+ 	Bill should be made dynamically 
+ 	Easily operable system
+Viewpoint of Coordinator:
+ 	User friendly system
+ 	System must generate the bill in pdf format
+ 	Billing calculation must be specific and exact
+ 	Dynamic bill making process should be included
+ 	Bill should be configurable by the user
+ 	System must be strongly authenticated
+ 	System should give the configuration option to change role of other user
+ 	System must generate the bill in pdf format
+ 	Easily operable system
+Viewpoint of Director:
+ 	User friendly system
+ 	System must be strongly authenticated
+ 	Dynamic bill making process should be included
+ 	Billing calculation must be specific and exact
+ 	System must generate the bill in pdf format
+ 	It will be easy to operate the system
+Viewpoint of Other Workers:
+ 	User friendly system
+ 	System must be strongly authenticated
+ 	It will be easy to operate the system
+Viewpoint of Developers:
+ 	All the requirements will be well defined
+ 	No major requirement change will come in the development phase
+ 	All the stakeholders will be available for further information and consult
+
+3.2.3 Working towards collaboration
+Every stakeholders has their own requirements from their own point of view. We followed following steps to merge all the requirements. We-
+	Identified the common and conflicting requirements
+	Categorized the requirements
+	Take priority points for each requirements from stakeholders 
+	Make final decision about the requirements
+
+Common requirements: We found some requirements are all the same from different user
+	User friendly and efficient system
+	Easy to operate
+	Authentication
+	Making the bill in pdf format
+	Dynamic billing process
+	Error free and exact calculation
+Conflicting requirements: We found some requirements conflicting each other. We had to trade-off between the requirements.
+	Availability of all requirements within the budget
+	No ambiguous requirement
+	Easy access
+	Strong authentication and high security
+	No harmful effects on existing technology
+Final requirements: We finalized following requirements for the system by categorizing and prioritizing the requirements.
+ 	Error free system (Maximum 5% error may be considerable)
+ 	Allow the users login and logout
+ 	User friendly and efficient system
+ 	Give the specific user specific role
+ 	Automated entry of billing information
+ 	Dynamic billing process
+ 	Generate bill in pdf
+ 	Central database contain all billing information
+
+3.2.4 Requirement Questionnaire
+We set our first set of context-free questions focuses on the customer and other stakeholders, overall project goals and benefits. The questions are mentioned above. These questions helped us to identify all stakeholders, measurable benefit of the successful implementation and possible alternatives to custom software development. Next set of question helped us to gain a better understanding of problem and allows the customer to voice his or her perception about the solution. The final set of question focused on the effectiveness of the communication activity itself.
+
+3.3 Conclusion
+Inception phase helped us to establish basic understanding about the project Billing System, identify the people who will be benefited using this system, define the nature of the project and establish a preliminary communication with our stakeholders.
+In our project, we have established a basic understanding of the problem, the nature of the solution that is desired and the effectiveness of preliminary communication and collaboration between the stake-holders and the software team. More studies and communication will help both side (developer and client) to understand the future prospect of the project. Our team believes that the full functioning document will help us to define that future prospect.

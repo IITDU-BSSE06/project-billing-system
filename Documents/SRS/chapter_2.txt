@@ -1,0 +1,24 @@
+Chapter 2: Introduction of SRS
+
+This chapter is a part of our software requirement specification for the project “Billing System”. In this chapter we focus on the intended audience for this project.
+
+2.1	Purpose
+This document briefly describes the software requirement analysis of Billing System. It contains functional, non-functional and support requirements and establishes a requirements baseline for the development of the system. The requirements contained in the SRS are independent, uniquely numbered, and organized by topic. The SRS serves as official means of communicating user requirements to the developer and provides a common reference point for both the developer team and stakeholder community. The SRS will evolve over time as users and developers work together to validate, clarify and expand its contents. 
+
+2.2 Intended Audience
+This SRS is intended for several audiences including the customers as
+well as the project managers, designers, developers, and testers.
+ 	The customer will use this SRS to verify that the developer team
+has created a product that is acceptable to the customer.
+ 	The project managers of the developer team will use this SRS to plan
+milestones and a delivery date, and ensure that the developing team
+is on track during development of the system.
+ 	The designers will use this SRS as a basis for creating the system’s
+design. The designers will continually refer back to this SRS to
+ensure that the system they are designing will fulfill the customer’s
+needs.
+ 	The developers will use this SRS as a basis for developing the system’s functionality. The developers will link the requirements defined in this SRS to the software they create to ensure that they have created software that will fulfill all of the customer’s documented requirements.
+ 	The testers will use this SRS to derive test plans and test cases for each documented requirement. When portions of the software are complete, the testers will run their tests on that software to ensure that the software fulfills the requirements documented in this SRS. The testers will again run their tests on the entire system when it is complete and ensure that all requirements documented in this SRS have been fulfilled.
+
+2.3 Conclusion
+This analysis of the audience helped us to focus on the users who will be using our system. This overall document will help each and every person related to this project to have a better idea about the project.
