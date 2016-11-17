@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2016 at 12:33 AM
+-- Generation Time: Nov 17, 2016 at 01:17 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.24
 
@@ -77,6 +77,7 @@ INSERT INTO `bill` (`bill_id`, `bill_name`, `bill_amount`, `bill_time`, `bill_ca
 CREATE TABLE `category` (
   `category_id` int(11) NOT NULL,
   `category_name` varchar(100) NOT NULL,
+  `expression` varchar(100) NOT NULL,
   `program_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -84,11 +85,16 @@ CREATE TABLE `category` (
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`category_id`, `category_name`, `program_id`) VALUES
-(1, 'script checking', 0),
-(2, 'supervision', 0),
-(3, '11', 10),
-(4, '12', 10);
+INSERT INTO `category` (`category_id`, `category_name`, `expression`, `program_id`) VALUES
+(1, 'script checking', '', 0),
+(2, 'supervision', '', 0),
+(3, '11', '', 10),
+(4, '12', '', 10),
+(5, 'lul', '3+5+6', 11),
+(6, 'laal', '1*2', 11),
+(7, 'lul', '3+5+6', 11),
+(8, 'laal', '1*2', 11),
+(9, 'marksheet', '( 3 * 4 )', 2);
 
 -- --------------------------------------------------------
 
@@ -110,7 +116,15 @@ CREATE TABLE `criteria` (
 INSERT INTO `criteria` (`criteria_id`, `criteria_name`, `program_id`, `criteria_amount`) VALUES
 (1, 'contribution', 0, NULL),
 (2, 'taka', 0, NULL),
-(3, '12345', 10, NULL);
+(3, '12345', 10, NULL),
+(4, 'maruf', 11, NULL),
+(5, 'jibair', 11, NULL),
+(6, 'taw', 11, NULL),
+(7, 'maruf', 11, NULL),
+(8, 'jibair', 11, NULL),
+(9, 'taw', 11, NULL),
+(10, 'taka per credit', 2, NULL),
+(11, 'contribution', 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -155,25 +169,27 @@ INSERT INTO `notification` (`notification_id`, `user_id`, `info`, `is_seen`, `no
 
 CREATE TABLE `program` (
   `program_id` int(11) NOT NULL,
-  `program_name` varchar(50) NOT NULL,
-  `expression` varchar(100) NOT NULL
+  `program_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `program`
 --
 
-INSERT INTO `program` (`program_id`, `program_name`, `expression`) VALUES
-(1, 'BSSE', ''),
-(2, 'MSSE', ''),
-(3, 'PGD IT NEW PRogram', ''),
-(4, 'lame', ''),
-(5, 'ahaha', ''),
-(6, 'new prog', ''),
-(7, 'new progppppppp', ''),
-(8, 'new progppppppp', ''),
-(9, 'pgdit updated', ''),
-(10, '123', '');
+INSERT INTO `program` (`program_id`, `program_name`) VALUES
+(1, 'BSSE'),
+(2, 'MSSE'),
+(3, 'PGD IT NEW PRogram'),
+(4, 'lame'),
+(5, 'ahaha'),
+(6, 'new prog'),
+(7, 'new progppppppp'),
+(8, 'new progppppppp'),
+(9, 'pgdit updated'),
+(10, '123'),
+(11, 'checking'),
+(12, 'checking'),
+(13, 'msse');
 
 -- --------------------------------------------------------
 
@@ -226,7 +242,7 @@ INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_password`, `user
 (14, 'Ariful Hoque Maruf', 'ahqmrf@gmail.com', '111111', 'de798f00cacec5b0ecf791d40b8d1158', 1, 'lecturer', '', '', ''),
 (15, 'Fazle Mohammed Tawsif', 'tawsif@gmail.com', '111111', '', 1, '', '', '', 'uploads/12-15.PNG'),
 (16, 'maruf', 'maruf.iitdu@gmail.com', '111111', '1f9919a485121f5c6c87e615d005ddf5', 1, 'lecturer', '', '', ''),
-(17, 'Md. Jubair Ibna Mostafa', 'jubair0614@gmail.com', '', '2bdbdb649c74eb87886b6a810c7f8f72', 1, 'assistantProfessor', '', '', '');
+(17, 'Md. Jubair Ibna Mostafa', 'jubair0614@gmail.com', '', '2bdbdb649c74eb87886b6a810c7f8f72', 1, 'assistantProfessor', '', '', 'uploads/About Window.PNG');
 
 --
 -- Indexes for dumped tables
@@ -294,12 +310,12 @@ ALTER TABLE `bill`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `criteria`
 --
 ALTER TABLE `criteria`
-  MODIFY `criteria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `criteria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `notification`
 --
@@ -309,7 +325,7 @@ ALTER TABLE `notification`
 -- AUTO_INCREMENT for table `program`
 --
 ALTER TABLE `program`
-  MODIFY `program_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `program_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `submission`
 --
