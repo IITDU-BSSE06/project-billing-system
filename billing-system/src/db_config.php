@@ -8,8 +8,8 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
-$dbname = "billing_system";
+$password = "ilovesabin";
+$dbname = "billing-system";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
