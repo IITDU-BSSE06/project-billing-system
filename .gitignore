@@ -7,3 +7,5 @@
 /billing-system/js/jquery/
 /billing-system/fonts/
 /billing-system/pom.xml
+/billing-system/src/db_config.php
+/billing-system/src/include.php
