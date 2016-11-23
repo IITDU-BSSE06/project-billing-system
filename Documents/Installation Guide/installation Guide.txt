@@ -1,0 +1,2 @@
+Web application, so no specific installation guide required. 
+Specific instruction added to the manual.
